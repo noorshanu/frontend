@@ -43,11 +43,10 @@ const LogoFallback = ({ isCollapsed, isSmall }: { isCollapsed?: boolean; isSmall
 
 const NetworkLogo = ({ isCollapsed, onClick, className }: Props) => {
 
-  const logoSrc = useColorModeValue(config.UI.navigation.logo.default, config.UI.navigation.logo.dark || config.UI.navigation.logo.default);
-  const iconSrc = useColorModeValue(config.UI.navigation.icon.default, config.UI.navigation.icon.dark || config.UI.navigation.icon.default);
-  const darkModeFilter = { filter: 'brightness(0) invert(1)' };
-  const logoStyle = useColorModeValue({}, !config.UI.navigation.logo.dark ? darkModeFilter : {});
-  const iconStyle = useColorModeValue({}, !config.UI.navigation.icon.dark ? darkModeFilter : {});
+  const logoSrc = useColorModeValue('/static/logoLight.png', '/static/whitelogo.png');
+  // const iconSrc = useColorModeValue(config.UI.navigation.icon.default, config.UI.navigation.icon.dark || config.UI.navigation.icon.default);
+  // const logoStyle = useColorModeValue({}, !config.UI.navigation.logo.dark ? darkModeFilter : {});
+  // const iconStyle = useColorModeValue({}, !config.UI.navigation.icon.dark ? darkModeFilter : {});
 
   return (
     <Box
@@ -70,17 +69,15 @@ const NetworkLogo = ({ isCollapsed, onClick, className }: Props) => {
         alt={ `${ config.chain.name } network logo` }
         fallback={ <LogoFallback isCollapsed={ isCollapsed }/> }
         display={{ base: 'block', lg: isCollapsed === false ? 'block' : 'none', xl: isCollapsed ? 'none' : 'block' }}
-        style={ logoStyle }
       />
       { /* small logo */ }
       <Image
         w="auto"
         h="100%"
-        src={ iconSrc }
+        src="/static/favicon.png"
         alt={ `${ config.chain.name } network logo` }
         fallback={ <LogoFallback isCollapsed={ isCollapsed } isSmall/> }
         display={{ base: 'none', lg: isCollapsed === false ? 'none' : 'block', xl: isCollapsed ? 'block' : 'none' }}
-        style={ iconStyle }
       />
     </Box>
   );

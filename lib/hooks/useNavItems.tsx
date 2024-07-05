@@ -190,12 +190,12 @@ export default function useNavItems(): ReturnType {
       !config.UI.navigation.hiddenLinks?.rpc_api && {
         text: 'RPC API',
         icon: 'RPC',
-        url: 'https://docs.blockscout.com/for-users/api/rpc-endpoints',
+        url: 'https://docs.deelance.com/getting-started/developer-guide/rpc',
       },
       !config.UI.navigation.hiddenLinks?.eth_rpc_api && {
         text: 'Eth RPC API',
         icon: 'RPC',
-        url: ' https://docs.blockscout.com/for-users/api/eth-rpc',
+        url: ' https://docs.deelance.com/',
       },
     ].filter(Boolean);
 
