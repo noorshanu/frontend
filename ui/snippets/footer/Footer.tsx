@@ -8,6 +8,7 @@ import type { CustomLinksGroup } from 'types/footerLinks';
 import config from 'configs/app';
 import type { ResourceError } from 'lib/api/resources';
 import useApiQuery from 'lib/api/useApiQuery';
+import useFetch from 'lib/hooks/useFetch';
 import NetworkAddToWallet from 'ui/shared/NetworkAddToWallet';
 
 import FooterLinkItem from './FooterLinkItem';
